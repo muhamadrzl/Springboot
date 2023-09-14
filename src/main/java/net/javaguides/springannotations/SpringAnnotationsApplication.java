@@ -22,8 +22,8 @@ public class SpringAnnotationsApplication {
 //		MyService myService = context.getBean(MyService.class);
 //		System.out.println(myService.hello());
 
-		MyRepository myRepository = context.getBean(MyRepository.class);
-		System.out.println(myRepository.hello());
+//		MyRepository myRepository = context.getBean(MyRepository.class);
+//		System.out.println(myRepository.hello());
 
 //		VegPizza vegPizza = context.getBean(VegPizza.class);
 //		System.out.println(vegPizza.getPizza());
