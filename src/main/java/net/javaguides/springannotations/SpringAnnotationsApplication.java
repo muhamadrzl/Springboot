@@ -3,6 +3,8 @@ package net.javaguides.springannotations;
 import net.javaguides.springannotations.controller.MyController;
 import net.javaguides.springannotations.controller.PizzaController;
 import net.javaguides.springannotations.repository.MyRepository;
+import net.javaguides.springannotations.scope.PrototypeBean;
+import net.javaguides.springannotations.scope.SingletonBean;
 import net.javaguides.springannotations.service.MyService;
 import net.javaguides.springannotations.service.VegPizza;
 import org.springframework.boot.SpringApplication;
@@ -13,19 +15,10 @@ public class SpringAnnotationsApplication {
 
 	public static void main(String[] args) {
 		var context = SpringApplication.run(SpringAnnotationsApplication.class, args);
-//		PizzaController pizzaController = (PizzaController) context.getBean("pizzaController");
-//		System.out.println(pizzaController.getPizza());
+		SingletonBean singletonBean1 = context.getBean(SingletonBean.class);
+		SingletonBean singletonBean2 = context.getBean(SingletonBean.class);
 
-//		MyController myController = context.getBean(MyController.class);
-//		System.out.println(myController.hello());
-
-//		MyService myService = context.getBean(MyService.class);
-//		System.out.println(myService.hello());
-
-//		MyRepository myRepository = context.getBean(MyRepository.class);
-//		System.out.println(myRepository.hello());
-
-//		VegPizza vegPizza = context.getBean(VegPizza.class);
-//		System.out.println(vegPizza.getPizza());
+		PrototypeBean prototypeBean1 = context.getBean(PrototypeBean.class);
+		PrototypeBean prototypeBean2 = context.getBean(PrototypeBean.class);
 	}
 }
