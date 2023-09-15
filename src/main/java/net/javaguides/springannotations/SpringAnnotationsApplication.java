@@ -17,12 +17,12 @@ public class SpringAnnotationsApplication {
 
 	public static void main(String[] args) {
 		var context = SpringApplication.run(SpringAnnotationsApplication.class, args);
-		PropertySourceDemo propertySourceDemo = context.getBean(PropertySourceDemo.class);
-
-		System.out.println(propertySourceDemo.getEmail());
-		System.out.println(propertySourceDemo.getHost());
-		System.out.println(propertySourceDemo.getPassword());
-		System.out.println(propertySourceDemo.getAppdescription());
-		System.out.println(propertySourceDemo.getAppname());
+//		PropertySourceDemo propertySourceDemo = context.getBean(PropertySourceDemo.class);
+//
+//		System.out.println(propertySourceDemo.getEmail());
+//		System.out.println(propertySourceDemo.getHost());
+//		System.out.println(propertySourceDemo.getPassword());
+//		System.out.println(propertySourceDemo.getAppdescription());
+//		System.out.println(propertySourceDemo.getAppname());
 	}
 }
