@@ -46,4 +46,33 @@ public class BookController {
         return ResponseEntity.ok("Book deleted successfully");
     }
 
+    @GetMapping("/books/{id}/{title}/{description}")
+    public ResponseEntity<Book> pathVariableDemo(@PathVariable int id,
+                                                 @PathVariable String title,
+                                                 @PathVariable String description)
+    {
+        System.out.println(id);
+        Book book = new Book();
+        book.setId(id);
+        book.setTitle(title);
+        book.setDescription(description);
+        return ResponseEntity.ok(book);
+    }
+
+    @GetMapping("/books/query")
+    public ResponseEntity<Book> requestParamDemo(
+            @RequestParam(name = "id") int id,
+            @RequestParam(name = "title") String title,
+            @RequestParam(name ="description") String description){
+        System.out.println(id);
+        System.out.println(title);
+
+        Book book = new Book();
+        book.setId(id);
+        book.setTitle(title);
+        book.setDescription(description);
+
+        return ResponseEntity.ok(book);
+    }
+
 }
