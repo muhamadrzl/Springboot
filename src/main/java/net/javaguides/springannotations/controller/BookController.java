@@ -14,6 +14,8 @@ public class BookController {
     public String helloWorld(){
         return "Hello World";
     }
+
+
     @GetMapping(value = {"/book", "/core-java", "/java"})
     public Book getBook(){
         Book book = new Book(1, "Core Java", "Java is Fun");
@@ -37,4 +39,11 @@ public class BookController {
         System.out.println(updatedBook.getDescription());
         return ResponseEntity.ok(updatedBook);
     }
+
+    @DeleteMapping(value = "/books/delete/{id}")
+    public ResponseEntity<String> deleteBook(@PathVariable int id){
+        System.out.println(id);
+        return ResponseEntity.ok("Book deleted successfully");
+    }
+
 }
